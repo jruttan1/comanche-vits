@@ -5,19 +5,18 @@ import numpy as np
 from scipy.io.wavfile import write
 from torch import no_grad, LongTensor
 
-# VITS modules
 from vits.models import SynthesizerTrn
 from vits.text import text_to_sequence
 from vits.text.symbols import symbols
 
-# ========== PATHS ==========
+# File paths
 
-CONFIG_PATH = "vits/configs/ljs_base.json"
+CONFIG_PATH = "vits/configs/.json"
 CHECKPOINT_PATH = "logs/G_latest.pth"
 DATA_PATH = "data/metadata.csv"
 OUTPUT_PATH = "output"
 
-# ========== HELPER FUNCTIONS ==========
+# Functions
 
 def load_config(path):
     with open(path, "r", encoding="utf-8") as f:
@@ -44,7 +43,7 @@ def infer(text, model, config, noise_scale=0.667, length_scale=1.0):
         audio = model.infer(x_tst, x_tst_lengths, noise_scale=noise_scale, length_scale=length_scale)[0][0, 0].cpu().numpy()
     return config["data"]["sampling_rate"], audio
 
-# ========== MAIN SCRIPT ==========
+# Main Script
 
 def main():
 
