@@ -1,0 +1,29 @@
+# Virtual environments
+vits_env/
+.venv/
+env/
+venv/
+
+# Data
+data/
+*.csv
+*.txt
+*.wav
+
+# Logs & outputs
+logs/
+output/
+checkpoints/
+*.log
+*.pth
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# VS Code & system files
+.vscode/
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
