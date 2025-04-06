@@ -4,19 +4,6 @@ vits_env/
 env/
 venv/
 
-# Data
-data/
-*.csv
-*.txt
-*.wav
-
-# Logs & outputs
-logs/
-output/
-checkpoints/
-*.log
-*.pth
-
 # Python cache
 __pycache__/
 *.py[cod]
